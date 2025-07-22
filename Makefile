@@ -23,6 +23,7 @@ restart:
 	docker-compose restart
 
 clean:
+	find . -type d -name "__pycache__" -exec rm -r {}
 	rm -rf $(shell docker-compose ps -q)
 
 re: clean up
