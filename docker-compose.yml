@@ -1,0 +1,56 @@
+version : "3.0"
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: react
+    ports:
+      - 5173:5173
+    volumes:
+      - "${PWD}/frontend/app:/app"
+      - "node_modules:/app/node_modules"
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  api:
+    build: ./backend
+    container_name: fastapi
+    ports:
+     - 8000:8000
+    # expose:
+    #   - "8000"
+    volumes:
+      - "${PWD}/backend:/app"
+    # depends_on:
+    #   database:
+    #     condition: service_healthy
+    env_file:
+      .env
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  opensearch-node:
+    image: opensearchproject/opensearch:2.11.1
+    container_name: opensearch-node
+    environment:
+    - discovery.type=single-node
+    - "DISABLE_SECURITY_PLUGIN=true"
+    - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+    - "9200:9200"
+    - "9600:9600"
+    volumes:
+    - opensearch-data:/usr/share/opensearch/data
+
+#MacOs Issue
+volumes:
+  node_modules:
+  opensearch-data:
+
+networks:
+  app-network:
+    driver: bridge
