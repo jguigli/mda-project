@@ -3,7 +3,7 @@ from fastapi import (Depends, Response, HTTPException, APIRouter)
 from fastapi.middleware.cors import CORSMiddleware
 from .config import FRONT_URL
 
-from api.logs_management.resources import logs_management_router
+from api.logs_management.resources import router as logs_management_router
 
 app = FastAPI()
 
