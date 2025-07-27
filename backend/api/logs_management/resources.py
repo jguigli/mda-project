@@ -41,7 +41,7 @@ async def search_logs(
     service: Optional[str] = Query(None)
     ):
     logs = []
-    
+
     # si il y a des params, alors on fait une recherche spécifique
     # sinon on renvoit les 20 derniers logs
     if q or level or service:
@@ -51,7 +51,7 @@ async def search_logs(
     
     response = client_open_search.search(
         body=query,
-        index='log-*'
+        index='logs-*'
     )
 
     if response['hits']['hits']:
