@@ -1,6 +1,6 @@
 from fastapi import (HTTPException, APIRouter, Query)
 from datetime import date, time, datetime
-from .schemas import Log
+from .schemas import Log, LogReceived
 from api.opensearch import client_open_search
 from .crud import create_index, index_log, set_log_search_query
 
@@ -10,7 +10,7 @@ router = APIRouter(tags=["logs_management"])
 
 
 @router.post("/logs")
-async def retrieve_logs(log: Log):
+async def retrieve_logs(log: LogReceived):
     # validation du log par pydantic
     
     try:

@@ -15,3 +15,8 @@ class Log(BaseModel):
     message: str
     service: str
 
+class LogReceived(BaseModel):
+    timestamp: str
+    level: levelEnum
+    message: str
+    service: str
