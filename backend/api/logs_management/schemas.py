@@ -9,6 +9,7 @@ class levelEnum(str, Enum):
     DEBUG = "DEBUG"
 
 class Log(BaseModel):
+    id: str
     timestamp: str
     level: levelEnum
     message: str
