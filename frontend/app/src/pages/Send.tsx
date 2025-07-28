@@ -43,7 +43,6 @@ export default function Send()
         </select>
       </div>
       <div>
-        {/* <input className='mt-4 border rounded border-gray-300' type="text" placeholder="Service" onChange={(e) => setSendLog((prev) => ({...prev, service: e.target.value}))}/> */}
         <select className='mt-4 border rounded border-gray-300' defaultValue='' onChange={(e) => setSendLog((prev) => ({...prev, service: e.target.value}))}>
           <option value="">- Select a service -</option>
           <option value="api-gateway">API Gateway</option>
