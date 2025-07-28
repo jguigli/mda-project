@@ -13,3 +13,4 @@
 [Query DSL boolean](https://www.elastic.co/docs/reference/query-languages/query-dsl/query-dsl-bool-query)  
 [Axios Doc](https://axios-http.com/fr/docs/intro)  
 [Axios instance](https://cleverzone.medium.com/demystifying-axios-instance-d38c290ecc11)  
+[Tailwind CSS Vite](https://tailwindcss.com/docs/installation/using-vite)  
