@@ -1,7 +1,7 @@
 from os import environ
 
-API_URL = environ["API_URL"]
-FRONT_URL = environ["FRONT_URL"]
+VITE_API_URL = environ["VITE_API_URL"]
+VITE_FRONT_URL = environ["VITE_FRONT_URL"]
 
 OPENSEARCH_HOST = environ["OPENSEARCH_HOST"]
 OPENSEARCH_PORT = environ["OPENSEARCH_PORT"]

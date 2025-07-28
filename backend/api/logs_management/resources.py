@@ -8,6 +8,7 @@ from typing import Optional
 
 router = APIRouter(tags=["logs_management"])
 
+
 @router.post("/logs")
 async def retrieve_logs(log: Log):
     # validation du log par pydantic
@@ -56,6 +57,7 @@ async def search_logs(
 
     if response['hits']['hits']:
         for log in response['hits']['hits']:
+            log['_source']['id'] = log['_id'] 
             logs.append(log['_source'])
 
     return logs

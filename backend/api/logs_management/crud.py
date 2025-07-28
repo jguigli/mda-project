@@ -41,7 +41,8 @@ def set_log_search_query(q=None, level=None, service=None, size=500):
     if q:
         musts.append({ 'match': { 'message': q }})
     if level:
-        filters.append({ 'term': { 'level': level }})
+        # case_insensitive: pour accepter les uppercase en filtre
+        filters.append({ 'term': { 'level': { 'value' : level, 'case_insensitive': True } }})
     if service:
         filters.append({ 'term': { 'service': service }})
     
