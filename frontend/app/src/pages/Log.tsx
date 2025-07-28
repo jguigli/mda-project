@@ -49,7 +49,14 @@ export default function Log()
         </select>
       </div>
       <div>
-        <input className='mt-4 border rounded border-gray-300' type="text" placeholder="Search for a service" onChange={(e) => setFilter((prev) => ({...prev, service: e.target.value}))}/>
+        <select className='mt-4 border rounded border-gray-300' defaultValue='' onChange={(e) => setFilter((prev) => ({...prev, service: e.target.value}))}>
+          <option value="">- Filter service -</option>
+          <option value="api-gateway">API Gateway</option>
+          <option value="auth-service">Auth service</option>
+          <option value="db-service">DB service</option>
+          <option value="worker-service">Worker service</option>
+          <option value="notification-service">Notification service</option>
+        </select>
       </div>
       <div className="p-4 mt-5">
         <table className="min-w-full table-auto border border-gray-300 rounded-md">

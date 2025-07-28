@@ -42,9 +42,9 @@ def set_log_search_query(q=None, level=None, service=None, size=500):
         musts.append({ 'match': { 'message': q }})
     if level:
         # case_insensitive: pour accepter les uppercase en filtre
-        filters.append({ 'term': { 'level': { 'value' : level, 'case_insensitive': True } }})
+        filters.append({ 'term': { 'level.keyword': { 'value' : level, 'case_insensitive': True } }})
     if service:
-        filters.append({ 'term': { 'service': service }})
+        filters.append({ 'term': { 'service.keyword': service }})
     
     # must: agit comme un 'AND', contribue au score (pertinence de recherche)
     # filter: agit comme un 'AND', le score est ignoré, évaluation true ou false
