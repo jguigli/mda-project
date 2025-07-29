@@ -1,5 +1,23 @@
 # MDA-project
 
+## Setup
+
+**Clone the Repository**
+   ```bash
+   git clone https://github.com/jguigli/mda-project.git
+   cd mda-project
+   ```
+
+You will need to paste the `.env` file to the root of the project.
+
+**Install the app**
+   ```bash
+   make
+   ```
+    
+## Usage
+
+- **Access interface visualization**: Visit `http://localhost:5173` to access the mda-project app.
 
 ## Useful links :
 
